@@ -1,6 +1,4 @@
-﻿using ShabieeNetLearning.Controller;
-using ShabieeNetLearning.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,31 +6,42 @@ using System.Threading.Tasks;
 
 namespace ShabieeNetLearning
 {
-    internal class Program
+    public class Program
     {
-        private static Student student;
-        private static StudentController studentController;
-
+        private string[] arr;
+        Program() {
+            arr = new string[5];
+        }
         static void Main(string[] args)
         {
-            Console.WriteLine("--Student Marksheet--");
-            student = new Student();
-            studentController = new StudentController();
-            studentController.SetStudentName(student);
-            string loopcheck;
-            do
-            {
-                studentController.setSubjectScores(student);
-                Console.WriteLine("Do you want to add more subjects.(N/Y)");
-                loopcheck = Console.ReadLine();
-            } while (loopcheck.ToUpper().Contains("Y"));
-            Console.WriteLine("--Student Marksheet--");
-            Console.WriteLine("My student name is : {0}", student.StudentName);
-            studentController.GetMarksheet(student);
-            studentController.getStudentMetaData(student);
-            Console.WriteLine("Total Percentage is {0}%",student.Percentage);
+            Console.WriteLine("Welcome To My Array");
+            Program program = new Program();
+            program.ArrayBaseFN("Usama", 3);
+            program.ArrayBaseFN("Shabiee", 2);
+            program.ArrayBaseFN("Ahsam", 4);
+            program.ArrayBaseFN(4);
+            program.Print();
             Console.ReadKey();
         }
-        
+        public string ArrayBaseFN(string value,int index)
+        {
+            //Push
+            arr[index] = value;
+            return "Data Pushed";
+        }
+        public string ArrayBaseFN(int index)
+        {
+            //Pop
+            arr[index] = null;
+            return "Data Pushed";
+        }
+        public void Print()
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.WriteLine("Data is : " + arr[i]);
+            }
+        }
+
     }
 }

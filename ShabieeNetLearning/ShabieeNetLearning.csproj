@@ -46,6 +46,7 @@
     <Compile Include="Controller\StudentController.cs" />
     <Compile Include="Model\Student.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Program_old.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
