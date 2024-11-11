@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShabieeNetLearning", "Shabi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryManagementWeb", "InventoryManagementWeb\InventoryManagementWeb.csproj", "{356C22B2-6704-41DC-8F73-9E0543719737}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryManagementApp", "InventoryManagementApp\InventoryManagementApp.csproj", "{D7D8BD0C-F3EE-457C-81EE-E577F942B220}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{356C22B2-6704-41DC-8F73-9E0543719737}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{356C22B2-6704-41DC-8F73-9E0543719737}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{356C22B2-6704-41DC-8F73-9E0543719737}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D7D8BD0C-F3EE-457C-81EE-E577F942B220}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D7D8BD0C-F3EE-457C-81EE-E577F942B220}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D7D8BD0C-F3EE-457C-81EE-E577F942B220}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D7D8BD0C-F3EE-457C-81EE-E577F942B220}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
