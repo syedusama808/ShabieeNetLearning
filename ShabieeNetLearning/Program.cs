@@ -8,39 +8,78 @@ namespace ShabieeNetLearning
 {
     public class Program
     {
-        private string[] arr;
-        Program() {
-            arr = new string[5];
-        }
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome To My Array");
             Program program = new Program();
-            program.ArrayBaseFN("Usama", 3);
-            program.ArrayBaseFN("Shabiee", 2);
-            program.ArrayBaseFN("Ahsam", 4);
-            program.ArrayBaseFN(4);
-            program.Print();
+            try
+            {
+                Console.WriteLine("Calculator");
+                string ask;
+                do
+                {
+                    string typeHandler = null;
+                    Console.WriteLine("Enter First Value");
+                    double valueFirst = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Enter Second Value");
+                    double valueSecond = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("What is your type of calculation");
+                    Console.Write("1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n");
+                    string type = Console.ReadLine();
+                    if (type == "1")
+                    {
+                        typeHandler = "add";
+                    }else if(type == "2")
+                    {
+                        typeHandler = "sub";
+                    }else if(type == "3")
+                    {
+                        typeHandler = "multi";
+                    }else if (type == "4")
+                    {
+                        typeHandler = "Div";
+                    }
+                    else
+                    {
+                        Console.WriteLine("No function existed!");
+                        break;
+                    }
+                    double output = program.calculation(valueFirst,valueSecond, typeHandler);
+                    Console.WriteLine("Calution of {0} {1} {2} = {3}",valueFirst,typeHandler,valueSecond,output);
+                    Console.WriteLine("More Calculation(n/y)?");
+                    ask = Console.ReadLine();
+                } while (ask.ToLower() == "y");
+            }
+            catch (Exception ex) { 
+                Console.WriteLine(ex.Message);
+            }
             Console.ReadKey();
         }
-        public string ArrayBaseFN(string value,int index)
+        double calculation(double x, double y,string type)
         {
-            //Push
-            arr[index] = value;
-            return "Data Pushed";
-        }
-        public string ArrayBaseFN(int index)
-        {
-            //Pop
-            arr[index] = null;
-            return "Data Pushed";
-        }
-        public void Print()
-        {
-            for (int i = 0; i < arr.Length; i++)
+            double z = 0;
+            try
             {
-                Console.WriteLine("Data is : " + arr[i]);
+                switch(type.ToUpper())
+                {
+                    case "ADD":
+                        z = x + y;
+                        break;
+                    case "SUB":
+                        z = x - y;
+                        break;
+                    case "MULTI":
+                        z = x * y;
+                        break;
+                    case "DIV":
+                        z = x / y;
+                        break;
+                }
+            }catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return 0;
             }
+            return z;
         }
 
     }
