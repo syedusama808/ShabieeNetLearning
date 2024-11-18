@@ -1,0 +1,65 @@
+﻿@using Journivia.Models.CategoryBindingModel
+@{
+    ViewBag.Title = "Category Management";
+}
+
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col-6">
+            @using (Html.BeginForm("CreateCategory", "Category", FormMethod.Post))
+            {
+                <div class="card">
+                    @if (ViewBag.Message != null && !string.IsNullOrWhiteSpace(ViewBag.Message))
+                    {
+                        <div class="alert alert-success">
+                            <p>@ViewBag.Message</p>
+                        </div>
+                    }
+                    <div class="card-body">
+                        <h4 class="text-center"> Create Category</h4>
+                        <div class="mb-2">
+                            <label>Name</label>
+                            <input type="text" name="CategoryName" class="form-control" />
+                        </div>
+                        <div class="mb-2">
+                            <label>Description</label>
+                            <textarea name="CategoryDescription" class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="m-0">
+                            <button class="btn btn-success">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Action</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>mmm</td>
+                                    <td>mmm</td>
+                                    <td>
+                                        <button class="btn btn-dark">Edit</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
